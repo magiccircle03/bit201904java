@@ -7,4 +7,3 @@
     바로 보니까 정말 편하네..!
 5. Indent Guides
     짝 맞추기 편해졌다.
-6. Color Merge
