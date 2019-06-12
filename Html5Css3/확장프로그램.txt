@@ -1,9 +1,0 @@
-1. Custom Work
-2. Beautify
-    컨트롤 쉬프트 엘로 자동정리
-3. emmet
-    !타이핑 후 tab 해서 html5 자동완성
-4. Color Highlighter
-    바로 보니까 정말 편하네..!
-5. Indent Guides
-    짝 맞추기 편해졌다.
