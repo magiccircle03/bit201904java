@@ -1,10 +1,10 @@
 # 회원 관리
 
-## 자바스크립트 버전 링크
+## 자바스크립트 버전 코드 링크
 
 링크 : https://github.com/magiccircle03/bit201904java/blob/master/WebClass/homework/04_member_manager/member_manager_js.html
 
-## 제이쿼리 활용 버전 링크
+## 제이쿼리 활용 버전 코드 링크
 
 링크 : https://github.com/magiccircle03/bit201904java/blob/master/WebClass/homework/04_member_manager/member_manager_jQuery.html
 
