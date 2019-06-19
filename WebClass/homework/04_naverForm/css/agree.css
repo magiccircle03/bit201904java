@@ -1,0 +1,101 @@
+
+textarea {
+    resize: none;
+}
+#contents li {
+    padding-top: 30px;
+}
+
+#contents > span > label {
+    text-decoration: underline;
+    line-height: 21px;
+}
+
+#lang {
+    position: absolute;
+    top: 14px;
+    right: 0;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label .check {
+    padding: 0 0 0 30px;
+    height: 26px;
+    background: url("../img/chk_no_s.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label .check {
+    background: url("../img/chk_yes_s.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+input[type="checkbox"] + label .check_big {
+    background: url("../img/chk_no_b.png");
+    background-repeat: no-repeat;
+    background-size: 24px;
+}
+
+input[type="checkbox"]:checked + label .check_big {
+    background: url("../img/chk_yes_b.png");
+    background-repeat: no-repeat;
+    background-size: 24px;
+}
+
+
+
+#contents textarea {
+    width: 434px;
+    height: 62px;
+    padding: 12px;
+    border: 1px solid #dadada;
+    margin-top: 8px;
+    color: #666;
+    font-size: 12px;
+}
+
+#contents > p {
+    font-size: 12px;
+    line-height: 16px;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#agreeBtn_w {
+    margin: 0 -5px;
+    padding-top: 30px;
+}
+
+#agreeBtn_w input {
+    /*    height: 23px;*/
+    height: 61px;
+    width: 225px;
+
+    /*    padding-top: 21px;
+    padding-bottom: 17px;*/
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 23px;
+    margin: 0 5px;
+    color: #fff;
+
+    border: 0;
+}
+
+#agreeBtn_w #agreeBtn {
+    background-color: #08a600;
+    cursor: pointer;
+}
+
+#agreeBtn_w #notAgreeBtn {
+    background-color: #8e8e8e;
+    cursor: pointer;
+}

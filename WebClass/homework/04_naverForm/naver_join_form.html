@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>네이버 : 회원가입</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/ini.css">
+    <link rel="stylesheet" type="text/css" href="css/com.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <center><a href="https://www.naver.com/"><img src="img/naver_logo_240.png"></a></center>
+    </div>
+    <div id="container">
+        <div id="contents">
+            
+            <div id="id_wrap"><label> 아이디 </label>
+                <span class="input_wrap"><input type="text" id="id" name="id"><span> @naver.com</span></span>
+                <p></p>
+
+            </div>
+            <div id="pw_wrap"><label> 비밀번호 </label>
+                <span class="input_wrap"><input type="password" id="pw" name="pw"></span>
+                <p></p>
+            </div>
+            <div id="pwChk_wrap"><label> 비밀번호 확인 </label>
+                <span class="input_wrap"><input type="password" id="pwChk" name="pwChk"></span>
+                <p></p>
+            </div>
+            <div id="name_wrap"><label> 이름 </label>
+                <span class="input_wrap"><input type="text" id="name" name="name"></span>
+                <p></p>
+            </div>
+            <div id="birth_wrap"><label> 생년월일 </label><br>
+  
+                    <span class="input_wrap birth"><input type="text" id="year" name="year" placeholder="년(4자)"></span>
+                    <span class="input_wrap birth"><select id="month" name="month">
+                            <option>월</option>
+                        </select></span>
+                    <span class="input_wrap birth"><input type="text" id="day" name="day" placeholder="일"></span>
+     
+                <p></p>
+            </div>
+            <div><label> 성별 </label><br>
+                <span class="input_wrap">
+                    <select id="gender" name="gender">
+                        <option value="0">선택</option>
+                        <option value="m">남자</option>
+                        <option value="w">여자</option>
+                    </select>
+                </span>
+                <p></p>
+            </div>
+            <div><label> 본인확인 이메일(선택) </label><br>
+                <span class="input_wrap"><input type="email" id="email" name="email" placeholder="선택 입력"></span>
+            </div>
+            <div><label> 휴대전화 </label><br>
+                <div>
+                    <span class="input_wrap"><select>
+                            <option>대한민국 +82</option>
+                    </select></span>
+                    <span class="input_wrap phone_input"><input type="text" id="phone" name="phone" placeholder="전화번호 입력"></span><input type="button" id="phoneBtn" class="btn" value="인증번호 받기">
+                    <span class="input_wrap"><input type="text" id="authNum" name="authNum" placeholder="인증번호 입력하세요"></span>
+                    <p></p>
+                </div>
+            </div>
+
+            <div id="joinBtnWrap">
+               <input type="button" value="가입하기" id="joinBtn" class="btn">
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div id="footer">
+
+        <ul>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">책임의 한계와 법적고지</a></li>
+            <li><a href="#">회원정보 고객센터 </a></li>
+        </ul>
+
+        <p><a href="https://www.navercorp.com/"><img src="img/mini_logo.gif"></a> Copyright NAVER Corp. All Rights Reserved.</p>
+    </div>
+
+    <script>
+
+    </script>
+</body></html>

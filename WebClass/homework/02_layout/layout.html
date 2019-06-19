@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Layout</title>
+    <style>
+        body{
+            background-color: #dddddd;
+        }
+        #container {
+            width: 960px;
+            padding: 20px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        #header {
+            padding: 10px;
+        }
+
+        #header>h1 {
+            margin-bottom: 0;
+
+        }
+
+        #nav {
+            border-top: 1px solid #808080;
+            border-bottom: 1px solid #808080;
+            height: 40px;
+            padding: 10px;
+        }
+
+        #nav_bar {
+            width: 500px;
+            float: left;
+
+
+        }
+
+        #nav_bar>ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav_bar>ul>li {
+            float: left;
+
+            margin: 10px;
+
+        }
+
+        #search_bar {
+            width: 220px;
+            float: right;
+            
+            padding: 10px;
+            position: relative;
+        }
+        #search_bar input[type=text]{
+            height: 20px;
+            padding: 0;
+            margin: 0;
+            border: 1px solid lightgray;
+            border-radius: 3px 0 0 3px;
+        }
+        #search_bar input[type=button]{
+            height: 23px;
+            width: 50px;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            
+            background-color: lightgray;
+            border: 0;
+            outline: 0;
+            
+            margin-top: 1px;
+            border-radius: 0 3px 3px 0;
+            
+        }
+        
+
+        #content_wrap {
+            float: left;
+            padding: 10px;
+            width: 600px;
+        }
+
+        #con_nav {
+            float: right;
+            width: 150px;
+
+        }
+        .con_nav_wrap ul{
+            list-style: none;  
+            padding-left: 20px;
+            line-height: 150%;
+        } 
+        .con_nav_wrap>ul>li {
+            color: #808080;
+            
+        }
+        .content {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #808080;
+        }
+
+        .content img {
+            width: 430px;
+        }
+
+        .content h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        #section {
+            
+            padding: 10px;
+        }
+
+        #footer {
+            clear: both;
+            height: 60px;
+            padding: 10px 30px;
+        }
+        a{
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>HTML5 레이아웃 연습하기!</h1>
+            <p>다애다애</p>
+        </div>
+        <div id="nav">
+            <div id="nav_bar">
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+            <div id="search_bar">
+                <input type="text">
+                <input type="button" value="검색">
+            </div>
+        </div>
+        <div id="section">
+            <div id="content_wrap">
+                <div class="content">
+                    <h1>[속보] 인기스타 스카피, 북극곰 출신으로 밝혀져</h1>
+                    <h4>2019년 06월 04일</h4>
+                    <img src="../images/niniz/nyum.gif">
+                    <p>
+                        인기토끼 스카피씨가 북극곰 출신으로 밝혀져 파문이 일고 있습니다. 한 SNS에 올라온 글에 따르면 스카피는 원래 극악무도한 북극곰이었지만, 마녀의 애완 펭귄을 잡아먹고 저주를 받아 작은 토끼가 되어버렸다고 합니다.<br>
+                        현재 본인의 레스토랑을 운영하며 요리사로 일하는 스카피씨. 하지만 고기의 출처는 아무도 알지 못하는데요.
+                        블라블라 와글와글 우르르쾅쾅 냠냠이라고 합니다.</p>
+                </div>
+                <div class="content">
+                    <h1>[단독] 이웃 조르디씨 인터뷰 입수</h1>
+                    <h4>2019년 06월 04일</h4>
+                    <img src="../images/niniz/jor.jpg">
+                    <p>이날 새벽 스카피씨가 북극곰으로 밝혀지면서, 무해하고 귀여운 토끼로서 큰 인기를 누려온 스카피씨를 사랑해온 팬들은 큰 충격을 받았는데요. 평소 생활 습관은 어땠는지 이웃들의 증언을 들어보았습니다.
+                        취준생 조르디씨. 취준생이다보니 스카피씨의 행적을 관찰할 기회가 많았다고 하는데요. 조르디씨의 인터뷰에 따르면 평소에도 육식을 즐겼다고 합니다.<br>
+                        조르디씨는 "자기 몸만한 고기를 한입에 크와앙! 하더라니까요"
+                        블라블라 크와아앙 어쩌구저쩌구 뇸뇸뇸 크와아앙! </p>
+                </div>
+
+            </div>
+
+            <div id="con_nav">
+                <div class="con_nav_wrap">
+                    <h4>카테고리</h4>
+                    <ul>
+                        <li>기사스크랩</li>
+                        <li>JAVA 정리</li>
+                        <li>생활정보</li>
+                        <li>기타 등등</li>
+                    </ul>
+                </div>
+                <div class="con_nav_wrap">
+                    <h4>최근글</h4>
+                    <ul>
+                        <li>[속보] 인기스타...</li>
+                        <li>[단독] 이웃 조르..</li>
+                        <li>수박은 정말 맛..</li>
+                        <li>[스크랩] 젤리맛...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="footer">
+            <a href="https://github.com/magiccircle03">Created By daae</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

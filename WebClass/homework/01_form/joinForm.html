@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form 연습</title>
+    <style> 
+        @import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
+        body{
+            font-family: 'Jua', sans-serif;
+            font-size: 19px;
+            color: #FF6666;
+    
+        }
+        textarea, input, select, option{
+            font-family: 'Jua', sans-serif;
+            font-size: 16px;
+            border-radius : 7px;
+            background-color: white;
+            color: #FF6666;
+
+        }
+        fieldset{
+            border: 0;
+        }
+        li{
+             list-style-image:url(tokoico.png);
+        }
+        table{
+            background-color: lightpink;   
+
+        }
+        h2{
+            color: skyblue;
+            text-shadow: 1px 1px 1px blue;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+   <div>
+   <center>
+   <h2> »☆.。.:*・° 회원가입 ٩(*´ ꒳ `*)۶ </h2>
+   
+   <form action="joinReceive.html" method="get">
+    <fieldset>
+        <table>
+            <tr><td><label for="name"><li>이름</li></label></td><td><input id="name" type="text" name="name"></td></tr>
+            <tr><td><label for="id"><li>ID</li></label></td><td><input id="id" type="text" name="id"></td></tr>
+            <tr><td><label for="pass"><li>비밀번호</li></label></td><td><input id="pass" type="password" name="pass"></td></tr>
+            <tr><td><label for="pass2"><li>비밀번호 확인</li></label></td><td><input id="pass2" type="password" name="pass2"></td></tr>
+            <tr><td><label for="socialNum1"><li>주민등록번호</li></label></td><td><input id="socialNum1" type="number" maxlength="6" name="socialNum1"> - <input id="socialNum2" type="number" maxlength="7" name="socialNum2"> <input type="button" value="주민번호 확인"></td></tr>
+            <tr><td><li>직업</li></td><td>
+                <select>
+                <option>직업명 선택</option>
+                <option>애완돌멩이</option>
+                <option>변신너구리</option>
+                <option>타락파워전사</option>
+                <option>전설의요리사</option>
+                <option>포켓몬마스터</option>
+                <option>큐티마법소년</option>
+                <option>민트초코사냥꾼</option>
+                </select>
+                </td>
+            </tr>
+            <tr><td><li>성별</li></td><td><input type="radio" name="gender" id="man"> 남자 <input type="radio" name="gender" id="woman"> 여자 <input type="radio" name="gender" id="lion"> 사자 <input type="radio" name="gender" id="pizza"> 피자</td></tr>
+            <tr><td><li>취미</li></td>
+            <td>
+            <input type="checkbox" id="rolling"> <label for="rolling">뒹굴거리기 </label>
+            <input type="checkbox" id="sleep"> <label for="sleep">잠만보 따라잡기</label>
+            <input type="checkbox" id="jmt"> <label for="jmt">떡볶이 투어 </label>
+
+            <input type="checkbox" id="music"> <label for="music">국가에서 허용한 유일한 마약 </label><br>
+            <input type="checkbox" id="game"> <label for="game">켠김에 왕까지</label>
+
+            <input type="checkbox" id="marimo"> <label for="marimo">마리모 돌보기</label>   
+            <input type="checkbox" id="diary"> <label for="diary">다꾸용품 수집하기</label>
+            <input type="checkbox" id="cooking"> <label for="cooking">요리영상 시청하기</label>
+            
+            </td></tr>
+            <tr><td><label for="intro"><li>자기소개</li></label></td><td><textarea id="intro" rows="5" cols="50" name="intro"></textarea></td></tr>
+            <tr><td colspan="2" style="text-align: center"><input type="submit" value="가입완료"> <input type="reset" value="취소"> </td></tr>
+        </table>
+      
+    </fieldset>
+    </form>
+      </center>
+</div>
+</body>
+
+</html>

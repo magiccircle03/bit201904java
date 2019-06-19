@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../../images/bg/city.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #DDD;
+}
+
+h1 {
+    text-shadow: 2px 2px #999;
+}
+
+#main_wrap {
+    /*정확히 500px하려고 보더랑 패딩 생각했음*/
+    width: 478px;
+
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 10px;
+
+}
+
+.box_deco {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+
+.title {
+    font-size: 24px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #AAA;
+    margin: 10px 0;
+}
+
+#regBox > form > table {
+    width: 100%;
+}
+
+#regBox > form > table td {
+    width: 25%;
+    padding: 5px;
+}
+
+.input {
+    width: 100%;
+    font-size: 16px;
+    padding: 3px;
+    display: block;
+    margin-top: 5px;
+
+}
+
+input[type=submit],
+input[type=button] {
+    background-color: cornflowerblue;
+    color: aliceblue;
+    border: 1px solid #DDD;
+    font-size: 16px;
+    padding: 5px 0;
+}
+
+label {
+    display: block;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+
+}
+
+.table td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #DDD;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+a {
+    cursor: pointer;
+}
+
+#editBox {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 300px;
+    padding: 10px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -150px;
+    display: none;
+}

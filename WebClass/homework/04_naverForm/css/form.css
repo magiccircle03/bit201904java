@@ -1,0 +1,77 @@
+#header {
+    padding-bottom: 20px;
+}
+
+input,
+select {
+    height: 29px;
+    width: 100%;
+    border: 0px;
+}
+
+select {
+    height: 31px;
+}
+
+#id_wrap input {
+    width: 79%;
+}
+#id_wrap>span{
+    color: #8e8e8e;
+    font-size: 15px;
+    font-weight: 300;
+}
+#pw_wrap input,
+#pwChk_wrap input {
+    width: 80%;
+}
+
+.input_wrap {
+    width: 430px;
+    display: block;
+    /*    height: 29px;*/
+    padding: 10px 14px;
+    background-color: white;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+}
+
+#birth_wrap {
+    margin-left: -5px;
+    overflow: hidden;
+}
+
+.birth {
+    width: 120px;
+    margin-left: 5px;
+    /*    margin-right: 5px;*/
+    float: left;
+    display: inline-block;
+}
+
+#contents > div {
+    padding-top: 20px;
+}
+
+.btn {
+    background-color: #08a600;
+    cursor: pointer;
+    color: white;
+    height: 51px;
+}
+
+.phone_input{
+    width: 304px;
+    display: inline-block;
+    margin-right: 10px;
+}
+#phoneBtn {
+    width: 115px;
+    font-size: 15px;
+}
+#joinBtn{
+    font-size: 20px;
+}
+label {
+    color: black;
+}
