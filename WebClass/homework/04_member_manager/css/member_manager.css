@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url(../../images/bg/city.jpg);
+    background-image: url(../img/city.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
