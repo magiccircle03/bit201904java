@@ -1,4 +1,4 @@
-# 네이버 회원가입
+# 네이버 회원가입 [미완, 진행중]
 
 ## 링크
 https://github.com/magiccircle03/bit201904java/tree/master/WebClass/homework/04_naverForm
