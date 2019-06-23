@@ -1,7 +1,11 @@
+#header select{
+    height: 30px;
+}
 
 textarea {
     resize: none;
 }
+
 #contents li {
     padding-top: 30px;
 }
@@ -60,6 +64,20 @@ input[type="checkbox"]:checked + label .check_big {
     font-size: 12px;
 }
 
+#contents .nes {
+    font-size: 12px;
+    font-weight: 300;
+    color: #08a600;
+}
+
+#contents .opt {
+    font-size: 12px;
+    font-weight: 300;
+    color: #8e8e8e;
+}
+#contents a{
+    color: #333;
+}
 #contents > p {
     font-size: 12px;
     line-height: 16px;

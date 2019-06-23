@@ -16,14 +16,16 @@ select {
 #id_wrap input {
     width: 79%;
 }
-#id_wrap>span{
+
+#id_wrap > span {
     color: #8e8e8e;
     font-size: 15px;
     font-weight: 300;
 }
+
 #pw_wrap input,
 #pwChk_wrap input {
-    width: 80%;
+    width: 82%;
 }
 
 .input_wrap {
@@ -34,6 +36,7 @@ select {
     background-color: white;
     margin-top: 8px;
     border: 1px solid #ddd;
+    position: relative;
 }
 
 #birth_wrap {
@@ -60,18 +63,39 @@ select {
     height: 51px;
 }
 
-.phone_input{
+.phone_input {
     width: 304px;
     display: inline-block;
     margin-right: 10px;
 }
+
 #phoneBtn {
     width: 115px;
     font-size: 15px;
 }
-#joinBtn{
+
+#joinBtn {
     font-size: 20px;
 }
+
 label {
     color: black;
+}
+
+.passCheckText {
+    font-size: 12px;
+    position: absolute;
+    top: 18px;
+    right: 40px;
+}
+
+.passCheckImg {
+    vertical-align: middle;
+    float: right;
+    line-height: 29px;
+    padding-top: 3px;
+}
+
+.input_wrap img {
+    width: 20px;
 }

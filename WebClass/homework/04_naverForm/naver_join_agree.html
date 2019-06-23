@@ -26,13 +26,13 @@
     <div id="container">
        <form id="join_form_agree" action="./naver_join_form.html">
         <div id="contents">
-            <span><input type="checkbox" name="chkInfo" id="chkAll"><label for="chkAll">
+            <span><input type="checkbox" name="chkAll" id="chkAll"><label for="chkAll">
                     <div class="check check_big">이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택),<br>
                         프로모션 안내 메일 수신(선택)에 모두 동의합니다.</div>
                 </label></span>
             <ul>
-                <li><input type="checkbox" name="chkInfo" id="chk1"><label for="chk1">
-                        <div class="check">네이버 이용약관 동의(필수)</div>
+                <li><input type="checkbox" name="chk1" id="chk1"><label for="chk1">
+                    <div class="check">네이버 이용약관 동의<span class="nes">(필수)</span></div>
                     </label>
                     <p><textarea readolny>여러분을 환영합니다.
                     
@@ -40,8 +40,8 @@
 
 네이버 서비스를 이용하시거나 네이버 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기 바랍니다.</textarea></p>
                 </li>
-                <li><input type="checkbox" name="chkInfo" id="chk2"><label for="chk2">
-                        <div class="check">개인정보 수집 및 이용에 대한 안내(필수)</div>
+                <li><input type="checkbox" name="chk2" id="chk2"><label for="chk2">
+                        <div class="check">개인정보 수집 및 이용에 대한 안내<span class="nes">(필수)</span></div>
                     </label>
                     <p><textarea readolny>정보통신망법 규정에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
 
@@ -53,8 +53,8 @@
 - 회원 가입 시에 ‘아이디, 비밀번호, 이름, 생년월일, 성별, 가입인증 휴대전화번호’를 필수항목으로 수집합니다. 만약 이용자가 입력하는 생년월일이 만14세 미만 아동일 경우에는 법정대리인 정보(법정대리인의 이름, 생년월일, 성별, 중복가입확인정보(DI), 휴대전화번호)를 추가로 수집합니다. 그리고 선택항목으로 이메일 주소를 수집합니다.
 - 단체아이디로 회원가입 시 단체아이디, 비밀번호, 단체이름, 이메일주소, 가입인증 휴대전화번호를 필수항목으로 수집합니다. 그리고 단체 대표자명을 선택항목으로 수집합니다.</textarea></p>
                 </li>
-                <li><input type="checkbox" name="chkInfo" id="chk3"><label for="chk3">
-                        <div class="check">위치정보 이용약관 동의(선택)</div>
+                <li><input type="checkbox" name="chk3" id="chk3"><label for="chk3">
+                        <div class="check">위치정보 이용약관 동의<span class="opt">(선택)</span></div>
                     </label>
                     <p><textarea readolny>위치정보 이용약관에 동의하시면, 위치를 활용한 광고 정보 수신 등을 포함하는 네이버 위치기반 서비스를 이용할 수 있습니다.
 
@@ -67,9 +67,10 @@
                         
                     </textarea></p>
                 </li>
-                <li><input type="checkbox" name="chkInfo" id="chk4"><label for="chk4">
-                        <div class="check">이벤트 등 프로모션 알림 메일 수신(선택)</div>
+                <li><input type="checkbox" name="chk4" id="chk4"><label for="chk4">
+                        <div class="check">이벤트 등 프로모션 알림 메일 수신<span class="opt">(선택)</span></div>
                     </label>
+                    <p id="agreeCheck"></p>
 <!--                    <p>네이버 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.</p>-->
                     </li>
             </ul>
@@ -104,14 +105,20 @@
                 }
             });
             
-            //아래 선택 풀렸을때 위에도 풀게하는 코드 만들기
-            //다시 선택하면 선택되게 -> 다 선택되면 위에도 불들어오고 아니면 안들어오고
-            
-            
+
+            $('input:checkbox').change(function(){ 
+                if($('#contents ul input:checkbox:checked').length < 4){
+                    $('#chkAll').prop('checked',false);
+                }else if($('#contents ul input:checkbox:checked').length == 4){
+                    $('#chkAll').prop('checked',true);
+                }
+            });
+           
             
             $('#agreeBtn').click(function(){
                 if(!($('#chk1').prop('checked') && $('#chk2').prop('checked'))){
-                    alert('필수 약관 동의ㄱㄱ');
+                    //alert('필수 약관 동의');
+                    $('#agreeCheck').html('네이버 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.');
                     return false;
                 }
             });
