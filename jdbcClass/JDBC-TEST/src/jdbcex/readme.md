@@ -1,6 +1,7 @@
 # 2019 07 09
 
 1.EMP 테이블에 새로운 사원 정보를 입력하는 프로그램을 작성해보자.
+<jdbcClass/JDBC-TEST/src/jdbcex/Ex1.java>
 
 2.EMP 테이블의 모든 데이터를 출력하는 프로그램을 작성해보자.
 
