@@ -10,7 +10,6 @@
 <%
 	EditFoodService service = EditFoodService.getInstance();
 	int cnt = service.edit(food);
-	
 %>
 <!DOCTYPE html>
 <html>

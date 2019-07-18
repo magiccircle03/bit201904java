@@ -61,7 +61,10 @@
 					조회수 : <%=food.getF_hits()%><br>
 					작성일시 : <%=food.getF_writedate()%><br> 
 					경로 : <%=food.getF_path()%><br> 
-					제목 : <%=food.getF_title()%><br> 
+					제목 : 
+					<a href="viewDetail.jsp?f_num=<%=food.getF_num()%>">
+					<%=food.getF_title()%><br>
+					</a>
 					별점 : <%=food.getF_star()%><br> 
 					좋아요 : <%=food.getF_like()%><br>
 					<a href="confirmDeletion.jsp?f_num=<%=food.getF_num()%>">삭제하기 </a>
@@ -83,7 +86,7 @@
 
 			</div>
 			<div id="footer">
-				<%@include file="../frame/footer.jsp"%>
+				<%@ include file="../frame/footer.jsp"%>
 			</div>
 		</div>
 	</div>
