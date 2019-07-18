@@ -20,9 +20,9 @@
 				<%@include file="../frame/nav.jsp"%>
 			</div>
 			<div id="content">
-				<h3>삭제 확인</h3>
-				<form action="deleteFood.jsp" method="post">
-					게시글을 삭제하시겠습니까?<br>
+				<h3>수정 확인</h3>
+				<form action="editFoodChk.jsp" method="post">
+					게시글을 수정하시겠습니까?<br>
 					<input type="hidden" name="f_num" value="<%= request.getParameter("f_num")%>">
 					<!-- 현재 세션에 로그인되어있는 사용자, 나중에 hidden으로 바꾸자 -->
 					<input type="text" name="u_num" value="<%= u_num%>">

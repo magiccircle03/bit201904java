@@ -44,7 +44,7 @@
 			</div>
 			<div id="content">
 				<h3>맛집 게시판</h3>
-
+				<a href="writeForm.jsp">글쓰기</a>
 				<hr>
 
 				<%
@@ -64,7 +64,8 @@
 					제목 : <%=food.getF_title()%><br> 
 					별점 : <%=food.getF_star()%><br> 
 					좋아요 : <%=food.getF_like()%><br>
-					<a href="confirmDeletion.jsp?f_num=<%=food.getF_num()%>">삭제하기 </a>	
+					<a href="confirmDeletion.jsp?f_num=<%=food.getF_num()%>">삭제하기 </a>
+					<a href="confirmEdit.jsp?f_num=<%=food.getF_num()%>">수정하기 </a>	
 				</div>
 				<br>
 

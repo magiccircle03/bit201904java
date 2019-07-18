@@ -56,6 +56,35 @@ public class FoodDao {
 		return rCnt;
 	}
 	
+	// 게시글 update
+		public int update(Connection conn, Food food) {
+			int rCnt = 0;
+			PreparedStatement pstmt = null;
+
+			try {
+				String sql = "update food set f_title=?, f_content=?, f_path=? where f_num=?";
+
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, food.getF_title()); // 제목
+				pstmt.setString(2, food.getF_content()); // 내용
+				pstmt.setString(3, food.getF_path()); // 파일 경로
+				pstmt.setInt(4, food.getF_num()); // 회원번호
+
+				rCnt = pstmt.executeUpdate();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			return rCnt;
+		}
+		
 	// 게시글 1개 select - 상세보기와 delete에 쓰려고한다!
 		public Food select(Connection conn, int f_num) {
 			Food food = null;
