@@ -40,9 +40,9 @@
 						<tr>
 							<td>사진</td>
 							<td>
-								<input type="file" name="f_path" value="<%= food.getF_path()%>">
+								<input type="file" name="f_path">
 							</td>
-							<!-- 이건 파일업로드 제대로 하면 될 것 같다..! -->
+							<!-- 이건 파일업로드 제대로 하면 될 것 같다..! 지금은 안 들어감 + 널인상태면 에러나는데 저거 고치면 알아서 해결되니 당황말고 기억해야겠다 -->
 						</tr>
 						<tr>
 							<td>내용</td>
@@ -60,7 +60,7 @@
 						<tr>
 							<td colspan="2">
 								<input type="text" name="f_num" value="<%= f_num%>"> 
-								<input type="text" name="u_num" value="<%=request.getParameter("u_num")%>"> 
+								
 								<input type="submit" value="등록">
 							</td>
 						</tr>

@@ -67,8 +67,7 @@
 					</a>
 					별점 : <%=food.getF_star()%><br> 
 					좋아요 : <%=food.getF_like()%><br>
-					<a href="confirmDeletion.jsp?f_num=<%=food.getF_num()%>">삭제하기 </a>
-					<a href="confirmEdit.jsp?f_num=<%=food.getF_num()%>">수정하기 </a>	
+
 				</div>
 				<br>
 

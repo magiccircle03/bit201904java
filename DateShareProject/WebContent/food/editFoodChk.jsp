@@ -48,9 +48,7 @@
 
 					<%
 						if (chk) {
-							response.sendRedirect("editFoodForm.jsp?u_num="+u_num+"&f_num="+f_num);
-							//fnum이랑 unum을 넘기려면 어찌하지 유즈빈인가
-							//이 방식 말고 다른 걸 알아보자.객체 넘겨주기
+							response.sendRedirect("editFoodForm.jsp?f_num="+f_num);
 					%>
 
 					<%
