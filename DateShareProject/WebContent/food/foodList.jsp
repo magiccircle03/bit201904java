@@ -23,7 +23,7 @@
 	FoodListView viewData = service.getFoodListView(pageNumber);
 	
 %>
-<% session.setAttribute("u_num",5);%>  
+<% session.setAttribute("u_num",3);%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,10 +73,12 @@
 	           						★
 	           						<%
 	           						} %>
+	           					<%-- 	별점 : <%= food.getF_star() %> --%>
 	           						<br>
 	            				 	<!-- 제목 --><%= food.getF_title() %><br>
 	           						조회수 <%= food.getF_hits() %>
-	           						좋아요  
+ 	           						좋아요  <%= food.getF_like() %> 
+
 	           						<br>
 	           						
 	            				 </p> 
@@ -85,10 +87,8 @@
 <%-- 					                  <a href="vieDetail.jsp?f_num=<%= food.getF_num() %>">
 					                  	<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
 					                  </a> --%>
-					                  
-					                  <a href="editFoodForm.jsp?f_num=<%= food.getF_num() %>">
-					                  	<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-					                  </a>
+
+					                
 					                </div>
 					                <small class="text-muted"><%= food.getF_writedate() %></small>
 					              </div>        				            			

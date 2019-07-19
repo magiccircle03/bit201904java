@@ -56,6 +56,7 @@ public class DeleteFoodService {
 			}
 
 			// 5. 사용자가 일치하면 정상처리(삭제) commit
+			dao.deleteFoodLike(conn,f_num);
 			resultCnt = dao.deleteFood(conn,f_num);
 			
 			// 정상 처리

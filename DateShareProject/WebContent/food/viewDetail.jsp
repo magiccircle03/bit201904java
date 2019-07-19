@@ -34,10 +34,11 @@
 						작성자번호 : <%= food.getU_num()%> <br>
 						작성일 : <%= food.getF_writedate()%><br>
 						조회수 : <%= food.getF_hits()%> <br>
-	<%-- 					좋아요 : <%= food.getF_like()%> <br> --%>
+	 					<a href="likeProcess.jsp?f_num=<%=food.getF_num()%>">좋아요</a> : <%= food.getF_like()%> <br> 
 						글제목 : <%= food.getF_title()%> <br>
 						글내용 : <%= food.getF_content()%> <br>
 						평점 : <%= food.getF_star()%> <br>
+						<img src="<%= food.getF_path()%>"><br>
 						사진경로 : <%= food.getF_path()%> <br>
 						<br>
 						<a href="confirmDeletion.jsp?f_num=<%=food.getF_num()%>">삭제하기 </a>

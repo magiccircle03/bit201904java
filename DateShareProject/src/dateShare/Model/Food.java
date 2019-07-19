@@ -105,6 +105,4 @@ public class Food {
 		return this.u_num == u_num;
 	}
 	
-
-
 }

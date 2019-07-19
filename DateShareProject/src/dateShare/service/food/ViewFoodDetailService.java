@@ -15,6 +15,7 @@ public class ViewFoodDetailService {
 		return service;
 	}
 	
+	
 	// 글넘버를 받고 푸드객체 반환 
 	public Food viewDetail(int f_num) {
 		Food food = null;
@@ -25,6 +26,7 @@ public class ViewFoodDetailService {
 			FoodDao dao = FoodDao.getInstance();
 			
 			food = dao.select(conn, f_num); // Food 객체 반환
+			food.setF_like(dao.likeCount(conn, f_num));
 			dao.addHit(conn, f_num); //조회수+1
 			
 		} catch (SQLException e) {
@@ -34,5 +36,6 @@ public class ViewFoodDetailService {
 		
 		return food;
 	}
+	
 	
 }
