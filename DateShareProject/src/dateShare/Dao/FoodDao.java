@@ -232,6 +232,33 @@ public class FoodDao {
 		}
 	}
 
+	// 좋아요 누르면 이미 누른 사람인지 확인한다. //얘가 0보다 크면(1이면) 이미 추천했단거니까 못하게 하자!
+	public int chkLike(Connection conn, int u_num, int f_num) {
+		int rCnt = 0;
+		PreparedStatement pstmt = null;
+
+		try {
+			String sql = "select * from f_like where (u_num=? and f_num=?)";
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, u_num); // 회원번호
+			pstmt.setInt(2, f_num); // 글번호
+
+			rCnt = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return rCnt;
+	}
+
 	// 좋아요 누르면 테이블 insert
 	public int addLike(Connection conn, int u_num, int f_num) {
 		int rCnt = 0;
@@ -285,7 +312,7 @@ public class FoodDao {
 		}
 		return rCnt;
 	}
-	
+
 	// 특정 글의 좋아요 수를 구하는 코드
 	public int likeCount(Connection conn, int f_num) {
 		int rCnt = -1;
@@ -308,7 +335,7 @@ public class FoodDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return rCnt;
 	}
+
 }

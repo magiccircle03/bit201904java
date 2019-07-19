@@ -1,7 +1,10 @@
 <%@page import="dateShare.Model.Food"%>
 <%@page import="dateShare.Dao.FoodListView"%>
 <%@page import="dateShare.service.food.GetFoodListService"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <%
 	String pageNumberStr = request.getParameter("page");
@@ -20,79 +23,91 @@
 	FoodListView viewData = service.getFoodListView(pageNumber);
 	
 %>
-<!-- 현재 로그인된 사용자, 임시로 넣어놨다 -->
-	<% session.setAttribute("u_num",5);%>  
-	
+<% session.setAttribute("u_num",5);%>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+    <title>DATE SHARE | FOOD</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link href="../css/index.css" rel="stylesheet" type="text/css">
 <style>
-	.pic{
-		width:250px;
+	body {
+		background-color: transparent;
 	}
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
-	<div id="wrap">
-		<div id="main_wrap">
-			<div id="header">
-				<%@include file="../frame/my.jsp"%>
-				<%@include file="../frame/header.jsp"%>
-			</div>
-			<div id="nav">
-				<%@include file="../frame/nav.jsp"%>
-			</div>
-			<div id="content">
-				<h3>맛집 게시판</h3>
-				<a href="writeForm.jsp">글쓰기</a>
-				<hr>
+<div id="wrap">
+    <div id="main_wrap">
+        <div id="header">
+        	<%@ include file="../frame/my.jsp" %>
+            <%@ include file="../frame/header.jsp" %>
+        </div>
+        <div id="nav">
+            <%@ include file="../frame/nav.jsp" %>
+        </div>
+        <div id="content" class ="album py-5">
+            <div id="contentList" class="container">   
+            	<div class="row">   
+            	<%
+            		if(viewData.isEmpty()) {
+            			out.println("등록된 게시글이 없습니다.");
+            			
+            		} else {
+            			for(Food food : viewData.getFoodList()) {            			
+            			%>          				
+            				<div class="col-md-4">
+            				<div class="card mb-4 shadow-sm">
+	            				<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+	            					<a href="viewDetail.jsp?f_num=<%= food.getF_num() %>">
+	            						<image xlink:href="<%= food.getF_path() %>" width="100%" height="225">
+	            					</a>
+	            				</svg> 
+	            				<div class="card-body">
+	            				 <p class="card-text">
+	            				 <% for(int i=0; i<food.getF_star();i++){
+	           						%>
+	           						★
+	           						<%
+	           						} %>
+	           						<br>
+	            				 	<!-- 제목 --><%= food.getF_title() %><br>
+	           						조회수 <%= food.getF_hits() %>
+	           						좋아요  
+	           						<br>
+	           						
+	            				 </p> 
+	            				 <div class="d-flex justify-content-between align-items-center">
+					                <div class="btn-group">
+<%-- 					                  <a href="vieDetail.jsp?f_num=<%= food.getF_num() %>">
+					                  	<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+					                  </a> --%>
+					                  
+					                  <a href="editFoodForm.jsp?f_num=<%= food.getF_num() %>">
+					                  	<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+					                  </a>
+					                </div>
+					                <small class="text-muted"><%= food.getF_writedate() %></small>
+					              </div>        				            			
+		            			</div>
+            				</div>
+            				</div>
+            			<%
+            			}
+            		}
+            	%>
+            	</div>
+            </div>
 
-				<%
-					if (viewData.isEmpty()) {
-				%>
-				<h3>등록된 메시지가 없습니다!</h3>
-
-				<%
-					} else {
-
-						for (Food food : viewData.getFoodList()) {
-				%>
-				<div>
-					조회수 : <%=food.getF_hits()%><br>
-					작성일시 : <%=food.getF_writedate()%><br> 
-					경로 : <%=food.getF_path()%><br> 
-					<img src="<%= food.getF_path()%>" class="pic"><br>
-					제목 : 
-					<a href="viewDetail.jsp?f_num=<%=food.getF_num()%>">
-					<%=food.getF_title()%><br>
-					</a>
-					별점 : <%=food.getF_star()%><br> 
-					<%-- 좋아요 : <%=food.getF_like()%><br> --%>
-					 
-				</div>
-				<br>
-
-				<%
-					}
-					}
-
-					// [1][2][3]
-					for (int i = 1; i < viewData.getPageTotalCount(); i++) {
-				%>
-				<a href="foodList.jsp?page=<%=i%>">[<%=i%>]</a>
-				<%
-					}
-				%>
-
-			</div>
-			<div id="footer">
-				<%@ include file="../frame/footer.jsp"%>
-			</div>
-		</div>
-	</div>
+            <a href="writeForm.jsp"><input type="button" class="btn btn-sm btn-outline-secondary" value="글 등록하기"></a> 
+        </div>
+        <div id="footer">
+            <%@ include file="../frame/footer.jsp" %>
+        </div>
+    </div>
+    </div>
 </body>
 </html>
