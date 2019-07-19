@@ -24,7 +24,8 @@ public class ViewFoodDetailService {
 			
 			FoodDao dao = FoodDao.getInstance();
 			
-			food = dao.select(conn, f_num);
+			food = dao.select(conn, f_num); // Food 객체 반환
+			dao.addHit(conn, f_num); //조회수+1
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

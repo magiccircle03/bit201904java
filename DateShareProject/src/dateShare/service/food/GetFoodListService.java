@@ -19,7 +19,7 @@ public class GetFoodListService {
 	private GetFoodListService() {}
 	
 	// 한 페이지에 보여줄 게시글의 개수
-		private static final int POST_COUNT_PER_PAGE = 9;
+		private static final int POST_COUNT_PER_PAGE = 100;
 		
 		public FoodListView getFoodListView(int pageNumber) {
 			// 2. 현재 페이지 번호 

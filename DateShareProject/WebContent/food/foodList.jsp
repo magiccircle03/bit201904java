@@ -21,7 +21,7 @@
 	
 %>
 <!-- 현재 로그인된 사용자, 임시로 넣어놨다 -->
-	<% session.setAttribute("u_num",2);%>  
+	<% session.setAttribute("u_num",5);%>  
 	
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="../css/index.css" rel="stylesheet" type="text/css">
-<style></style>
+<style>
+	.pic{
+		width:250px;
+	}
+</style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
@@ -61,13 +65,14 @@
 					조회수 : <%=food.getF_hits()%><br>
 					작성일시 : <%=food.getF_writedate()%><br> 
 					경로 : <%=food.getF_path()%><br> 
+					<img src="<%= food.getF_path()%>" class="pic"><br>
 					제목 : 
 					<a href="viewDetail.jsp?f_num=<%=food.getF_num()%>">
 					<%=food.getF_title()%><br>
 					</a>
 					별점 : <%=food.getF_star()%><br> 
-					좋아요 : <%=food.getF_like()%><br>
-
+					<%-- 좋아요 : <%=food.getF_like()%><br> --%>
+					 
 				</div>
 				<br>
 

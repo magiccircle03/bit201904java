@@ -9,7 +9,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <!-- 글쓰기를 눌렀을 때 현재 로그인 된 사용자, 임시로 넣었다 -->
-	<% session.setAttribute("u_num",21);%> 
+	<% session.setAttribute("u_num",5);%> 
 <body>
 	<div id="wrap">
 		<div id="main_wrap">
