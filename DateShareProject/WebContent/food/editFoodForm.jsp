@@ -28,7 +28,7 @@
 			</div>
 			<div id="content">
 				<h3>글 수정하기</h3>
-				<form action="editFood.jsp" method="post">
+				<form action="editFood.jsp" method="post" enctype="multipart/form-data">
 					<table>
 
 						<tr>
@@ -51,6 +51,7 @@
 							</td>
 						</tr>
 						<tr>
+<tr>
 							<td>별점</td>
 							<td>
 								<input type="range" name="f_star" max="10" step="1" value="<%= food.getF_star()%>">
@@ -59,8 +60,8 @@
 
 						<tr>
 							<td colspan="2">
-								<input type="text" name="f_num" value="<%= f_num%>"> 
-								
+								<input type="hidden" name="f_num" value="<%=f_num%>">
+								<input type="hidden" name="u_num" value="<%=session.getAttribute("u_num") %>">
 								<input type="submit" value="등록">
 							</td>
 						</tr>

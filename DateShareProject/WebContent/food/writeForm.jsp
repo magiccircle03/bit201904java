@@ -22,8 +22,8 @@
 			</div>
 			<div id="content">
 				<h3>글쓰기</h3>
-					<form action="writeFood.jsp" method="post">
-<!-- 				<form action="writeFood.jsp" method="post" enctype="multipart/form-data"> -->
+<!-- 					<form action="writeFood.jsp" method="post"> -->
+ 				<form action="writeFood.jsp" method="post" enctype="multipart/form-data"> 
 					<table>
 						<!-- quill api 사용하면 좋겠다 -->
 						<!-- 지도 api 사용하면 좋겠다 -->
@@ -61,7 +61,6 @@
 						</tr>
 					</table>
 				</form>
-
 				<hr>
 			</div>
 			<div id="footer">

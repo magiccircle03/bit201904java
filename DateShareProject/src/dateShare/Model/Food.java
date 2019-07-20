@@ -13,12 +13,34 @@ public class Food {
 	private int f_hits; // 조회수
 	private int f_star; // 별점
 
-	
 	public Food() {
 	}
 
-	public Food(int f_num, int u_num, String f_title, String f_content, int f_like, String f_path,
-			int f_hits, int f_star) {
+	/*
+	 * public Food( String f_title, String f_content, String f_path, int f_star) {
+	 * this.f_title = f_title; this.f_content = f_content; this.f_path = f_path;
+	 * this.f_star = f_star; }
+	 */
+	public Food(int u_num, String f_title, String f_content, String f_path, int f_star) {
+		this.u_num = u_num;
+		this.f_title = f_title;
+		this.f_content = f_content;
+		this.f_path = f_path;
+		this.f_star = f_star;
+	}
+
+	public Food(int f_num, int u_num, String f_title, String f_content, String f_path, int f_star) {
+
+		this.f_num = f_num;
+		this.u_num = u_num;
+		this.f_title = f_title;
+		this.f_content = f_content;
+		this.f_path = f_path;
+		this.f_star = f_star;
+	}
+
+	public Food(int f_num, int u_num, String f_title, String f_content, int f_like, String f_path, int f_hits,
+			int f_star) {
 		this.f_num = f_num;
 		this.u_num = u_num;
 		this.f_title = f_title;
@@ -104,7 +126,5 @@ public class Food {
 	public boolean matchU_num(int u_num) {
 		return this.u_num == u_num;
 	}
-	
-
 
 }
