@@ -23,7 +23,7 @@
 	FoodListView viewData = service.getFoodListView(pageNumber);
 	
 %>
-<% session.setAttribute("u_num",5);%>  
+<% session.setAttribute("u_num",3);%>  
 <!DOCTYPE html>
 <html>
 <head>
