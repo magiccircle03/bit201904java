@@ -1,4 +1,4 @@
-﻿package dateShare.Model;
+package dateShare.Model;
 
 import java.util.Date;
 

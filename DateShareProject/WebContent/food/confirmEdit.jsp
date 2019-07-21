@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,10 @@
 <style></style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
-	<% int u_num = (int)session.getAttribute("u_num");%>
+<%
+	session = request.getSession(false);
+	LoginInfo currentUser = (LoginInfo) session.getAttribute("userInfo");
+%>
 <body>
 	<div id="wrap">
 		<div id="main_wrap">
@@ -22,11 +26,11 @@
 			<div id="content">
 				<h3>수정 확인</h3>
 				<form action="editFoodChk.jsp" method="post">
-					게시글을 수정하시겠습니까?<br>
-					<input type="hidden" name="f_num" value="<%= request.getParameter("f_num")%>">
-					<!-- 현재 세션에 로그인되어있는 사용자, 나중에 hidden으로 바꾸자 -->
-					<input type="text" name="u_num" value="<%= u_num%>">
-					<input type="submit" value="네">
+					게시글을 수정하시겠습니까?<br> <input type="hidden" name="f_num"
+						value="<%=request.getParameter("f_num")%>">
+					<!-- 현재 세션에 로그인되어있는 사용자 -->
+					<input type="hidden" name="u_num" value="<%= currentUser.getU_num() %>"> <input
+						type="submit" value="네">
 				</form>
 			</div>
 			<div id="footer">

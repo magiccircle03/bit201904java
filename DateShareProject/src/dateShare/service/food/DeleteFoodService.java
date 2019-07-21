@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import dateShare.Dao.FoodDao;
 import dateShare.Model.Food;
 import jdbc.ConnectionProvider;
-import jdbc.jdbcUtil;
+import jdbc.JdbcUtil;
 
 
 public class DeleteFoodService {
@@ -64,15 +64,15 @@ public class DeleteFoodService {
 			
 		} catch (SQLException e) {
 			// 트랜잭션 롤백
-			jdbcUtil.rollback(conn);
+			JdbcUtil.rollback(conn);
 			e.printStackTrace();
 			throw e;
 		} catch (FoodNotFoundException e) {
-			jdbcUtil.rollback(conn);
+			JdbcUtil.rollback(conn);
 			e.printStackTrace();
 			throw e;
 		} catch (NotMatchUserException e) {
-			jdbcUtil.rollback(conn);
+			JdbcUtil.rollback(conn);
 			e.printStackTrace();
 			throw e;
 		}
