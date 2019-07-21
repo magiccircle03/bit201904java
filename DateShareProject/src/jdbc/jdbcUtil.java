@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class JdbcUtil {
+public class jdbcUtil {
 	
 	//ResultSet - static method 를 통해서 연결종료
 	public static void close(ResultSet rs) {

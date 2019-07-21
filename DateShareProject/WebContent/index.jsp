@@ -1,15 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	session = request.getSession(false);
-	boolean loginChk = false;
-	if (session.getAttribute("userInfo") != null) {
-		loginChk = true;
-	}
-	if (loginChk) {
-		response.sendRedirect("main.jsp");
-	}
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,16 +17,16 @@
 			<div id="content">
 				<div id="login_form_wrap">
 					<h1>LOGIN</h1>
-					<form action="loginPro.jsp" method="post">
+					<form>
 						<div>
-							ID<input class="input_t" type="text" name="u_id" required>
+							ID<input class="input_t" type="text">
 						</div>
 						<div>
-							PW<input class="input_t" type="password" name="u_pw" required>
+							PW<input class="input_t" type="password">
 						</div>
 						<div>
 							<input class="input_b" type="submit" value="로그인">
-							<a href="user/insertForm.jsp" class="input_ba">회원가입</a>
+							<input class="input_b" type="submit" value="회원가입">
 						</div>
 					</form>
 				</div>
