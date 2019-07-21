@@ -65,6 +65,7 @@
 	WriteFoodService service = WriteFoodService.getInstance();
 	int cnt = service.write(foodFile);
 %>
+<!--검색해보니 파일도 들어간 것을 에이젝스로 처리할 땐 뭔가 조금 달랐던 것 같다. 주의해서 수정하자 -->
 
 <!DOCTYPE html>
 <html>
@@ -75,10 +76,6 @@
 <body>
 	<h1>
 		<%=cnt > 0 ? "게시글을 작성하였습니다" : "게시글 작성 실패"%>
-		제목 :
-		<%=f_title%>
-		cnt :<%=cnt%>
-		유저번호 <%=u_num %>
 	</h1>
 	<a href="foodList.jsp">목록보기</a>
 </body>

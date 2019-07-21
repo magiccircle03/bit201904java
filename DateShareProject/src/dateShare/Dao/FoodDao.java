@@ -1,4 +1,4 @@
-﻿package dateShare.Dao;
+package dateShare.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dateShare.Model.Food;
-import jdbc.jdbcUtil;
+import jdbc.JdbcUtil;
 
 /*
 	맛집 게시판 Dao
@@ -144,7 +144,7 @@ public class FoodDao {
 		return rCnt;
 	}
 
-	// 게시글 1개 select - 상세보기와 delete에 쓰려고한다! - 라이크 없을 때
+	// 게시글 1개 select - 상세보기와 delete에 쓰려고한다! 
 	
 	public Food select(Connection conn, int f_num) {
 		Food food = null;
@@ -179,21 +179,22 @@ public class FoodDao {
 
 		return food;
 	}
-
-	/*
-	// 게시글 1개 select - 상세보기와 delete에 쓰려고한다! - 라이크 있을 때
+	
+/*
+	
+	// 게시글 1개 select - 상세보기와 delete에 쓰려고한다!
 		public Food select(Connection conn, int f_num) {
 			Food food = null;
 
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 
-			String sql = "select f_num, u_num, f_title, f_content, f_writedate,(select count(*) from f_like where f_num=23) as \"f_like\", f_path, f_hits, f_star from food where f_num=?";
+			String sql = "select f_num, u_num, f_title, f_content, f_writedate,(select count(*) from f_like where f_num=?) as \"f_like\", f_path, f_hits, f_star from food where f_num=?";
 
 			try {
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, f_num);
-
+				pstmt.setInt(2, f_num);
 				rs = pstmt.executeQuery();
 
 				if (rs.next()) {
@@ -312,7 +313,7 @@ public class FoodDao {
 			resultCnt = pstmt.executeUpdate();
 
 		} finally {
-			jdbcUtil.close(pstmt);
+			JdbcUtil.close(pstmt);
 		}
 		return resultCnt;
 	}
@@ -330,7 +331,7 @@ public class FoodDao {
 
 			rCnt = pstmt.executeUpdate();
 		} finally {
-			jdbcUtil.close(pstmt);
+			JdbcUtil.close(pstmt);
 		}
 
 		return rCnt;
@@ -390,6 +391,8 @@ public class FoodDao {
 
 	// 좋아요 누르면 테이블 insert
 	public int addLike(Connection conn, int u_num, int f_num) {
+		System.out.println("addlike 실행됨");
+		
 		int rCnt = 0;
 		PreparedStatement pstmt = null;
 
@@ -417,6 +420,7 @@ public class FoodDao {
 
 	// 좋아요 취소하면 delete
 	public int cancelLike(Connection conn, int u_num, int f_num) {
+		System.out.println("cancelLike 실행됨");
 		int rCnt = 0;
 		PreparedStatement pstmt = null;
 
