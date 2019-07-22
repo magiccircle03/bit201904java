@@ -59,8 +59,9 @@
 							<%=food.getF_title()%></p>
 						<div>
 							<p>
-								글쓴이
-								<%=food.getU_num()%></p>
+								작성자
+								<%-- <%=food.getU_num()%> --%>
+								<%=food.getU_name()%></p>
 							<p>
 								작성시간
 								<%=food.getF_writedate()%></p>
@@ -69,11 +70,12 @@
 						<p>
 							내용
 							<%=food.getF_content()%></p>
-						<p>
+<%-- 						<p>
 							<a href="likeProcess.jsp?f_num=<%=food.getF_num()%>">좋아요</a> :<%=food.getF_like()%>
-						</p>
+						</p> --%>
+						<p>좋아요 : <p id="likeCount"><%=food.getF_like()%></p></p>
 						<form id="likeForm">
-							<input type="button" onclick="like()" value="좋아요">
+							<input type="button" onclick="like(<%=food.getF_num()%>)" value="좋아요">
 						</form>
 					</div>
 
@@ -97,6 +99,23 @@
 </body>
 
 <script>
+//좋아요
+function like(f_num) {
+	//alert('버튼 누르면 여기서 좋아요 처리하게');
+	
+	$.ajax ({
+		url: 'likeProcess.jsp?f_num='+f_num,
+		type: 'post',
+		data : {
+			f_num : f_num
+		},
+		success: function(data){
+			$('#likeCount').html(data);
+		}
+		});
+	
+}
+
 
 // 게시글 수정
 function editFood(f_num, currentUser_num, writeUser_num) {
@@ -114,10 +133,11 @@ function editFood(f_num, currentUser_num, writeUser_num) {
 			},
 			success: function(data){
 				alert('쨘');
+				location.href='editFoodForm.jsp?f_num='+f_num;
 			}
 		}); 
 	} else{
-		alert("자신이 작성한 글만 수정 가능합니다!");
+		alert('자신이 작성한 글만 수정 가능합니다!');
 	}
 }
 
@@ -138,19 +158,16 @@ function editFood(f_num, currentUser_num, writeUser_num) {
 				},
 				//success: function(data){
 				success: function(data){
-					//alert($.trim(data)+'번 글 삭제');
-					alert('게시글을 삭제하였습니다!');
+					alert($.trim(data)); //삭제했는지 성공했는지 
 					location.href="foodList.jsp";
 				}
 			}); 
 		} else{
-			alert("자신이 작성한 글만 수정 가능합니다!");
+			alert('자신이 작성한 글만 삭제 가능합니다!');
 		}
 	}
 	
 	
-	function like() {
-		alert('버튼 누르면 여기서 좋아요 처리하게');
-	}
+
 </script>
 </html>

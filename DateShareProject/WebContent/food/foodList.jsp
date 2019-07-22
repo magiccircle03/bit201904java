@@ -116,7 +116,6 @@ body {
 					</div>
 				</div>
 
-
 			</div>
 			<div id="footer">
 				<%@ include file="../frame/footer.jsp"%>
