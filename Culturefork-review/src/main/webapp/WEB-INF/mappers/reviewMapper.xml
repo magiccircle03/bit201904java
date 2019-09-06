@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.daae.culturefork.review.dao.ReviewDaoInterface">
+
+	<resultMap id="resultReviewInfo"
+		type="com.daae.culturefork.review.domain.ReviewInfo">
+		<id property="r_num" column="r_num" />
+		<result property="r_title" column="r_title" />
+		<result property="r_content" column="r_content" />
+		<result property="r_date" column="r_date" />
+		<result property="u_id" column="u_id" />
+		<result property="r_hits" column="r_hits" />
+		<result property="r_star" column="r_star" />
+		<result property="r_seq" column="r_seq" />
+		<result property="r_ptitle" column="r_ptitle" />
+		<result property="r_thumb" column="r_thumb" />
+		<result property="r_gpsX" column="r_gpsX" />
+		<result property="r_gpsY" column="r_gpsY" />
+	</resultMap>
+
+	<!-- 글쓰기 -->
+	<insert id="insertReview"
+		parameterType="com.daae.culturefork.review.domain.ReviewInfo">
+		insert into review (r_title, r_content, r_date, u_id, r_star, r_seq, r_ptitle, r_thumb, r_gpsX, r_gpsY) 
+		values 
+		(#{r_title},#{r_content},#{r_date},#{u_id},#{r_star},#{r_seq},#{r_ptitle},#{r_thumb},#{r_gpsX},#{r_gpsY});
+	</insert>
+	
+	<!-- 전체 리뷰 리스트 -->
+	<select id="selectAllList" resultMap="resultReviewInfo">
+		SELECT * FROM review order by r_num desc
+	</select>
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="reviewDelete">
+		delete from review where r_num=#{r_num}
+	</delete>
+	
+	<!-- 리뷰 수정을 위한 정보 획득 -->
+	<select id="selectReviewByR_num" resultMap="resultReviewInfo">
+		select * from review
+		where r_num=#{r_num}
+	</select>
+	
+	<!-- 리뷰 수정 -->
+	<update id="reviewUpdate" parameterType="com.daae.culturefork.review.domain.RequestReviewEdit">
+		update review 
+		set r_title=#{r_title}, r_content=#{r_content}, r_star=#{r_star} 
+		where r_num=#{r_num}
+	</update>
+	
+	<!-- 조회수 -->
+	<update id="updateHits">
+		update review set r_hits = r_hits+1 where r_num=#{r_num}
+	</update>
+
+</mapper>
+
+
+ 
+ 
